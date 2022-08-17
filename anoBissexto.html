@@ -1,0 +1,45 @@
+<!-- Botao que quando clica, voce coloca um ano no formato: AAAA
+E ele retorna dizendo se o ano é Bissexto ou Não
+Junto com background verde e emoji 'Certo' para ano bissexto
+ou background vermelhor e emoji 'x' para ano nao bissexto
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ano Bissexto</title>
+    <style>
+        body{font-size: 30px }
+        body p {font-size: 35px;}
+        button {font-size: 20px; padding: 30px; margin: 10px;}
+        script {font-size: 15px;}
+        
+    </style>
+</head>
+<body>
+    <h1>Ano Bissexto</h1>
+
+    <button onclick="ano()">Verificar</button>
+
+    <section id="resultado" >
+        <p>Informe um ano para saber se ele é Bissexto</p>
+    </section>
+</body>
+<script>
+    function ano() {
+        let n1 = Number(window.prompt("Digite um ano no formato AAAA"))
+        let resultado = document.querySelector("section#resultado")
+
+        if ((n1 % 4 == 0) && ((n1 % 100 != 0) || (n1 % 400 == 0))) {
+        
+        return resultado.innerHTML = `<h1> Analisando o ano de ${n1}...</h1> <p> O ano ${n1} <span style="background-color: rgb(119, 206, 119)">É BISSEXTO</span> &#x2705; </p>`}
+
+        else {
+            return resultado.innerHTML = `<h1> Analisando o ano de ${n1}...</h1> <p> O ano ${n1} <span style="background-color: rgb(206, 119, 119)"> NÃO É BISSEXTO </span>&#x274C</p>`
+    }
+}
+</script>
+</html>

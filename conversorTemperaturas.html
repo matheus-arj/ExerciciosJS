@@ -1,0 +1,43 @@
+<!-- Botao que quando clica, voce digita um grau celsiu
+E retorna o resultado em Fahrenheit e Kelvin -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Graus</title>
+    <style>
+        body {font-size: 25px;}
+        button {padding: 20px; font-size: 20px;}
+    </style>
+</head>
+<body>
+    <h1>Conversor de Temperaturas</h1>
+
+    <button onclick="ConversorTemp()">Converter</button>
+
+<section id="resultadoTemperatura">
+    <p>Clique no botão acima para iniciar.</p>
+</section>
+
+</body>
+
+<script>
+    function ConversorTemp() {
+        let numeroGrau = Number(window.prompt("Digite uma temperatura em ºC (Celsius): "))
+        let conversorFahrenheit = (numeroGrau * 9/5) + 32
+        let conversorKelvin = (numeroGrau + 273.15) 
+
+        conversorKelvin = conversorKelvin.toFixed(2)
+        conversorFahrenheit = conversorFahrenheit.toFixed(2)
+        
+        let resultadoTemperatura = document.querySelector('section#resultadoTemperatura')
+        
+        resultadoTemperatura.innerHTML = `<h1> A temperatura de ${numeroGrau}ºC, corresponde a... </h1>
+            <p>${conversorKelvin}ºK (Kelvin)</p>
+            <p>${conversorFahrenheit}ºF (Fahrenheit)</p>`
+    }
+</script>
+</html>
