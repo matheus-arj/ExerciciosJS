@@ -1,0 +1,66 @@
+<!-- Criar um botao para converter medidas em metros para:
+QUILOMETROS, HECTOMETROS, DECAMETROS, DECIMETROS, CENTIMETROS, MILIMETROS -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Medidas</title>
+    <style>
+        body {font-size: 25px;}
+        button {padding: 20px; font-size: 20px;}
+    </style>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+
+    <button onclick="conversorMedidas()">Converter</button>
+
+    <section id="resultadoConversaoMetros">
+        <p>Clique no botão acima para começar.</p>
+    </section>
+</body>
+
+<script>
+    function conversorMedidas() {
+
+        let numeroMetros = parseFloat(window.prompt("Digite uma distância em metros (m)"))
+        let resultadoConversaoMetros = document.querySelector('section#resultadoConversaoMetros')
+
+            resultadoConversaoMetros.innerHTML = `<h1>A distância de ${numeroMetros} metros, corresponde a...</h1>
+            <p>${conversorParaKM(numeroMetros)} quilômetros (Km)</p>
+            <p>${conversorParaHM(numeroMetros)} hectômetros (Hm)</p>
+            <p>${conversorParaDAM(numeroMetros)} decâmetros (Dam)</p>
+            <p>${conversorParaDM(numeroMetros)} decímetros (dm)</p>
+            <p>${conversorParaCM(numeroMetros)} centímetros (cm)</p>
+            <p>${conversorParaMM(numeroMetros)} milímetros (mm)</p>`
+        
+    }
+
+    function conversorParaKM(numeroMetros) {
+        return numeroMetros / 1000
+    }
+
+    function conversorParaHM(numeroMetros) {
+        return numeroMetros / 100
+    }
+
+    function conversorParaDAM(numeroMetros) {
+        return numeroMetros / 10
+    }
+
+    function conversorParaDM(numeroMetros) {
+        return numeroMetros * 10
+    }
+
+    function conversorParaCM(numeroMetros) {
+        return numeroMetros * 100
+    }
+
+    function conversorParaMM(numeroMetros) {
+        return numeroMetros * 1000
+    } 
+</script>
+</html>
