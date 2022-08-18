@@ -27,11 +27,9 @@ E retorna o resultado em Fahrenheit e Kelvin -->
 <script>
     function ConversorTemp() {
         let numeroGrau = Number(window.prompt("Digite uma temperatura em ºC (Celsius): "))
-        let conversorFahrenheit = (numeroGrau * 9/5) + 32
-        let conversorKelvin = (numeroGrau + 273.15) 
 
-        conversorKelvin = conversorKelvin.toFixed(2)
-        conversorFahrenheit = conversorFahrenheit.toFixed(2)
+        conversorKelvin = converterParaKelvin(numeroGrau).toFixed(2)
+        conversorFahrenheit = converterParaFarenheit(numeroGrau).toFixed(2)
         
         let resultadoTemperatura = document.querySelector('section#resultadoTemperatura')
         
@@ -39,5 +37,15 @@ E retorna o resultado em Fahrenheit e Kelvin -->
             <p>${conversorKelvin}ºK (Kelvin)</p>
             <p>${conversorFahrenheit}ºF (Fahrenheit)</p>`
     }
+
+    function converterParaKelvin(numeroGrau) {
+        return numeroGrau + 273.15
+    }
+
+    function converterParaFarenheit(numeroGrau) {
+        return (numeroGrau * 9 / 5) + 32
+    }
+
+
 </script>
 </html>
