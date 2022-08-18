@@ -1,0 +1,57 @@
+<!-- Criar um botao, quando clicar pedir ao usuario informar 
+o valor antigo do produto, e logo após pedir o valor atual
+apos isso, informar todas as informacoes exibidas no resultado deste exercicio -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço Mudou</title>
+    <style>
+        body {font-size: 20px;}
+        button {font-size: 20px; padding: 20px;}
+    </style>
+</head>
+<body>
+    <h1>Preço mudou</h1>
+    <button onclick="inputPreço()">Verificar</button>
+    
+    <section id="resultText">Clique no botão acima para analisar a mudança de preço.</section>
+
+</body>
+
+<script>
+    function inputPreço() {
+        let precoAntigo = window.prompt("Qual era o preço antigo do produto?")
+        let precoAtual = window.prompt("Qual é o preço atual do produto?")
+       
+        let quantoMudou = precoAtual - precoAntigo
+        if (quantoMudou < 0) {
+            quantoMudou = quantoMudou * -1 
+        } 
+         
+        let resultadoPreco = document.querySelector("section#resultText")
+
+        let resultadoPorcentagem = calculaPorcentagem(precoAtual, precoAntigo).toFixed(2)
+        if (resultadoPorcentagem < 0) {
+            resultadoPorcentagem = resultadoPorcentagem * -1
+        }
+
+
+        if (precoAtual > precoAntigo) {
+            return resultadoPreco.innerHTML = `<p> <strong>O produto custava R$ ${precoAntigo} e agora custa R$ ${precoAtual}.</strong></p> <p> Hoje o produto está mais caro. </p> <p>O preço subiu <strong> R$ ${quantoMudou}</strong> em relação ao preço anterior</p><p>Uma variação de ${resultadoPorcentagem}% pra cima</p>`
+        } else {
+            return resultadoPreco.innerHTML = `<p> <strong>O produto custava R$ ${precoAntigo} e agora custa R$ ${precoAtual}.</strong></p> <p> Hoje o produto está mais barato.</p> <p>O preço caiu <strong>R$ ${quantoMudou}</strong> em relação ao preço anterior</p><p>Uma variação de ${resultadoPorcentagem}% pra baixo</p>`
+        }
+
+
+
+    }   
+
+    function calculaPorcentagem(precoAtual, precoAntigo) {
+        return ((precoAntigo / precoAtual) -1) * 100
+    }
+</script>
+</html>
