@@ -30,15 +30,15 @@ ou background vermelhor e emoji 'x' para ano nao bissexto
 </body>
 <script>
     function ano() {
-        let n1 = Number(window.prompt("Digite um ano no formato AAAA"))
+        let numeroAno = Number(window.prompt("Digite um ano no formato AAAA"))
         let resultado = document.querySelector("section#resultado")
 
-        if ((n1 % 4 == 0) && ((n1 % 100 != 0) || (n1 % 400 == 0))) {
+        if ((numeroAno % 4 == 0) && ((numeroAno % 100 != 0) || (numeroAno % 400 == 0))) {
         
-        return resultado.innerHTML = `<h1> Analisando o ano de ${n1}...</h1> <p> O ano ${n1} <span style="background-color: rgb(119, 206, 119)">É BISSEXTO</span> &#x2705; </p>`}
+        return resultado.innerHTML = `<h1> Analisando o ano de ${numeroAno}...</h1> <p> O ano ${numeroAno} <span style="background-color: rgb(119, 206, 119)">É BISSEXTO</span> &#x2705; </p>`}
 
         else {
-            return resultado.innerHTML = `<h1> Analisando o ano de ${n1}...</h1> <p> O ano ${n1} <span style="background-color: rgb(206, 119, 119)"> NÃO É BISSEXTO </span>&#x274C</p>`
+            return resultado.innerHTML = `<h1> Analisando o ano de ${numeroAno}...</h1> <p> O ano ${numeroAno} <span style="background-color: rgb(206, 119, 119)"> NÃO É BISSEXTO </span>&#x274C</p>`
     }
 }
 </script>

@@ -21,10 +21,10 @@ logo, aparecera o resultado "Acabei de conhecer fulano, que tem x idade." -->
 </body>
 <script>
     function apresentacao() {
-    let n1 = String(window.prompt("Qual seu nome?"))
-    let n2 = Number(window.prompt(`Olá, ${n1}! Quantos anos você tem?`))
+    let nomeInput = String(window.prompt("Qual seu nome?"))
+    let numeroIdade = Number(window.prompt(`Olá, ${nomeInput}! Quantos anos você tem?`))
     
-    window.alert(`Acabei de conhecer ${n1}, que tem ${n2} anos de idade!`)
+    window.alert(`Acabei de conhecer ${nomeInput}, que tem ${numeroIdade} anos de idade!`)
     }
 
 </script>
