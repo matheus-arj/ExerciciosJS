@@ -1,0 +1,53 @@
+<!-- Calcular desconto de um produto em 10%
+exibir, o valor original, nome do produto, e valor com desconto -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desconto</title>
+    <style>
+        body {font-size: 20px;}
+        button {padding: 20px; font-size: 20px;}
+    </style>
+
+</head>
+<body>
+    <h1>Calcular Desconto</h1>
+
+    <button onclick="desconto()">Desconto de 10%</button>
+
+    <section id="resulText">
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
+</body>
+
+<script>
+    function desconto() {
+        let nomeProduto = String(window.prompt("Qual o produto que dejesa comprar?"))
+        let precoProduto = Number(window.prompt("Qual o valor do produto?"))
+
+        let descontoCalculado = precoProduto / 10
+        let precoComDesconto = precoProduto - descontoCalculado
+
+        let resultadoTexto = document.querySelector("section#resulText") 
+
+        resultadoTexto.innerHTML = `<h1>Calculando desconto de 10% para ${nomeProduto}:</h1>
+        <p> O preço original era R$ ${precoProduto}</p>
+        <p> Você acaba de ganhar R$ ${descontoCalculado} de desconto (-10%)</p>
+        <p> No fim, você vai pagar R$ ${precoComDesconto} no produto ${nomeProduto}`
+
+    }
+
+    // function calculoDesconto(precoProduto) {
+    //     return precoProduto / 10
+    // }
+
+    // function totalComDesconto(precoProduto) {
+    //     return precoProduto - precoComDesconto
+        
+    // }
+</script>
+</html>
