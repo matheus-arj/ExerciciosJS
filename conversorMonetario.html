@@ -1,0 +1,46 @@
+<!-- Quando o usuario acessar o site, 
+aparecera uma caixa pedindo a cotação atual do Dolar.
+Apos informar a cotação, apertar o botao para inserir quanto o cliente
+quer converter Reais em Dolar -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor Monetário</title>
+    <style>
+        body {font-size: 20px;}
+        button{padding: 20px; font-size: 20px;}
+    </style>
+</head>
+<body>
+    <h1>Conversor R$ → US$</h1>
+    <button onclick="conversorMonetario()">Converter</button>
+
+    <section id="resultadoConversao">
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
+</body>
+
+<script>
+   let cotacao = window.prompt("Insira a cotação atual do Dólar: ")
+
+    function conversorMonetario() {
+        let valorReais = window.prompt("Quantos R$ voce tem na carteira? ")
+    
+        let conversaoDolar = valorReais/cotacao
+
+        resultadoConversao = conversaoDolar.toFixed(2)
+
+        let resultadoConversaoReal = document.querySelector('section#resultadoConversao')
+
+        resultadoConversaoReal.innerHTML = `<h1>De R$${valorReais}, você terá $${resultadoConversao}.</h1>`
+
+        
+    }
+
+    
+</script>
+</html>
