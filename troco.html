@@ -1,2 +1,32 @@
 <!-- Botao que recebe, nome do produto, valor do produto e pagamento
 retornar o troco -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troco</title>
+    <style>
+        body {font-size: 20px;}
+        button {font-size: 20px; padding: 20px;}
+
+    </style>
+</head>
+<body>
+    <h1>Calculando o troco</h1>
+    <button onclick="trocoProduto()">Comprar produto</button>
+</body>
+
+<script>
+    function trocoProduto() {
+        let nomeProduto = String(window.prompt("Que produto você está comprando?"))
+        let valorProduto = Number(window.prompt(`Quanto custa ${nomeProduto} que você está comprando?`))
+        let valorPagamento = Number(window.prompt("Qual valor você pagou?"))
+        let troco = valorPagamento - valorProduto
+
+        window.alert(`Você comprou ${nomeProduto} que custou R$ ${valorProduto}. Você deu RS ${valorPagamento} em dinheiro e vai receber R$ ${troco} de troco. Volte Sempre!`)
+    }
+</script>
+</html>
