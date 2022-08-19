@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota Aluno</title>
+    <style>
+        body {font-size: 20px;}
+        button {font-size: 20px; padding: 20px;}
+    </style>
+</head>
+<body>
+    <h1>Situação do Aluno</h1>
+
+    <button onclick="calculoMedia()">Entrar com as notas</button>
+
+    <section id="paragrafo">Clique no botão acima para iniciar.</section>
+</body>
+<script>
+    function calculoMedia() {
+        let nomeAluno = String(window.prompt("Qual é o nome do aluno?"))
+        let primeiraNota = Number(window.prompt(`Primeira nota de ${nomeAluno}.`))
+        let segundaNota = Number(window.prompt(`Segunda nota de ${nomeAluno}`))
+        let mudançaParagrafo =  document.querySelector('#paragrafo')
+        let media = (primeiraNota + segundaNota) / 2
+
+
+        if (media < 3) {
+            return mudançaParagrafo.innerHTML = `<h1>Analisando a situação de ${nomeAluno}</h1>
+                <p>Com as notas ${primeiraNota} e ${segundaNota}, <strong> a média é ${media}</strong></p>
+                <p>Com média abaixo de 3,0, o aluno está <span style="background-color: rgb(206, 119, 119)">REPROVADO</span></p>`
+        } else if (media < 6) {
+            return mudançaParagrafo.innerHTML = `<h1>Analisando a situação de ${nomeAluno}</h1>
+                <p>Com as notas ${primeiraNota} e ${segundaNota}, <strong> a média é ${media}</strong></p>
+                <p>Com média entre 3,0 e 6,0, o aluno está <span style="background-color: rgb(206, 176, 119)">RECUPERAÇÃO</span></p>`
+        } else if (media > 6) {
+            return mudançaParagrafo.innerHTML = `<h1>Analisando a situação de ${nomeAluno}</h1>
+                <p>Com as notas ${primeiraNota} e ${segundaNota}, <strong> a média é ${media}</strong></p>
+                <p>Com média acima de 6,0, o aluno está <span style="background-color: rgb(119, 206, 119)">APROVADO</span></p>`
+        }
+
+
+
+    }
+</script>
+</html>
